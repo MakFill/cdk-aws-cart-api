@@ -10,10 +10,6 @@ export class CartController {
   @Get()
   async findCart(@Req() req: AppRequest) {
     const carts = await this.cartService.getAll();
-    return {
-      statusCode: HttpStatus.OK,
-      message: 'OK',
-      data: { carts },
-    };
+    return carts;
   }
 }
